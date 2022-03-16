@@ -79,9 +79,9 @@ public class Factura {
 
         // filtraje funcional con streams
         Factura facturaFiltro=lista.stream()
-                .filter(elemento->elemento.getImporte()<100)
+                .filter(elemento->elemento.getImporte()<1000)
                 .findFirst()
-                .get();
+                .orElseThrow();
         System.out.println(facturaFiltro.getImporte());
         System.out.println("\n");
 
@@ -101,7 +101,7 @@ public class Factura {
         Factura filtrarCodigo=lista.stream()
                 .filter(elemento->elemento.getCodigoFactura() == 2)
                 .findFirst()
-                .get();
+                .orElseThrow();
         System.out.println(filtrarCodigo);
         System.out.println("\n");
 
